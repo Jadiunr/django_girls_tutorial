@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <title>Unchi</title>
+</head>
+<body>
+<nav>
+    <div class="nav-wrapper">
+        <a href="{% url 'post_list' %}" class="brand-logo">Django Girls Blog</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#">Dummy1</a></li>
+            <li><a href="#">Dummy2</a></li>
+            <li><a href="#">Dummy3</a></li>
+            <li><a href="{% url 'post_new' %}" class="waves-effect waves-light btn">add</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+</html>
